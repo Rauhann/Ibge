@@ -16,8 +16,8 @@ final class RegionsMigration extends AbstractMigration
             id INT NOT NULL,
             name VARCHAR(20) NOT NULL,
             initials VARCHAR(2) NOT NULL,
-            created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-            updated_at TIMESTAMP NOT NULL DEFAULT NOW(),
+            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
             PRIMARY KEY (id)
         )");
     }

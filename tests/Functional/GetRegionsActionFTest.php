@@ -4,7 +4,7 @@ namespace Ibge\Tests\Functional;
 
 use Ibge\Tests\TestCase;
 
-class GetREgionsActionFTest extends TestCase
+class GetRegionsActionFTest extends TestCase
 {
 
     public function setUp(): void

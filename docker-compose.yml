@@ -2,7 +2,6 @@ version: '3.7'
 
 volumes:
     ibge-postgres:
-        driver: 'local'
 
 networks:
     ibge-net:
@@ -17,7 +16,7 @@ services:
         restart: always
         tty: true
         ports:
-            - "3000:3306"
+            - "3000:5432"
         environment:
             - POSTGRES_PASSWORD=${DB_PASS}
             - POSTGRES_USER=${DB_USER}

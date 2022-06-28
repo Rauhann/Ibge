@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 use Phinx\Migration\AbstractMigration;
 
-final class ConfigMigration extends AbstractMigration
+final class TimezoneMigration extends AbstractMigration
 {
     /**
      * Migrate
@@ -12,10 +12,7 @@ final class ConfigMigration extends AbstractMigration
      */
     public function up(): void
     {
-        // TIMESTAMP DO BANCO DE DADOS
         $this->execute("SET timezone = 'America/Sao_Paulo'");
-
-        // CRIAR USUARIOS
     }
 
     /**
@@ -25,5 +22,6 @@ final class ConfigMigration extends AbstractMigration
      */
     public function down(): void
     {
+        $this->execute("SET timezone = 'UTC'");
     }
 }

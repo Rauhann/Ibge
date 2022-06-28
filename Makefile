@@ -22,7 +22,7 @@ reset:
 functionals:
 	vendor/bin/phpunit --testsuite f
 test:
-	vendor/bin/phpunit
+	vendor/bin/phpunit --filter GetRegionsActionFTest && vendor/bin/phpunit --filter GetStatesActionFTest && vendor/bin/phpunit --filter GetCitiesActionFTest && vendor/bin/phpunit --filter GetDistrictsActionFTest
 migrate:
 	vendor/bin/phinx migrate
 rollback:

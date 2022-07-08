@@ -2,6 +2,7 @@
 
 namespace Ibge\Src\Models;
 
+use Exception;
 use Ibge\Src\Entities\Region;
 use Ibge\Src\Services\IbgeService;
 
@@ -49,5 +50,16 @@ class RegionModel
                 $region['sigla']
             ]);
         }
+    }
+
+    public function getAllRegions(): array
+    {
+        $query = $this->regionEntity->query("SELECT * FROM regions");
+
+        if (!$query) {
+            throw new Exception('Erro ao buscar regiões');
+        }
+
+        return $query->fetchAll();
     }
 }

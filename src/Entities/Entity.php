@@ -40,7 +40,7 @@ class Entity
      */
     public function query(
         string $query,
-        array  $params
+        array  $params = []
     ): mixed
     {
         $stmt = $this->db->prepare("$query");

@@ -6,7 +6,7 @@ use DI\Container;
 use Ibge\Src\Traits\Json;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Factory\AppFactory;
-
+use Jenssegers\Blade\Blade;
 class App
 {
     use Json;
@@ -36,6 +36,7 @@ class App
         }
 
         $GLOBALS['app'] = $this->getApp();
+        $GLOBALS['blade'] = new Blade('app/resources/views', 'app/resources/cache');
 
         return $this->getApp();
     }

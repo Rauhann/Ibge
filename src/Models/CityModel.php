@@ -34,6 +34,22 @@ class CityModel
         return $result;
     }
 
+    public function findFiltered(
+        array $columns,
+        ?int $id,
+        ?string $name,
+        ?int $stateId,
+        int $pageSize = 100,
+        int $pageNumber = 1
+    ) {
+        $result = $this->cityEntity->findFiltered($columns, $id, $name, $stateId, $pageSize, $pageNumber);
+
+        if (!$result) {
+            return [];
+        }
+        return $result;
+    }
+
     /**
      * Salva os municipios no banco de dados.
      *

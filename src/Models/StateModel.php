@@ -34,6 +34,32 @@ class StateModel
         return $result;
     }
 
+    public function findFiltered(
+        array $columns,
+        ?int $id,
+        ?string $name,
+        ?string $initials,
+        ?int $regionId,
+        int $pageSize = 100,
+        int $pageNumber = 1
+    ) {
+        $result = $this->stateEntity->findFiltered(
+            $columns,
+            $id,
+            $name,
+            $initials,
+            $regionId,
+            $pageSize,
+            $pageNumber
+        );
+
+        if (!$result) {
+            return [];
+        }
+
+        return $result;
+    }
+
     /**
      * Salva os estados no banco de dados.
      *

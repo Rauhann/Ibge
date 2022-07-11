@@ -35,6 +35,21 @@ class RegionModel
         return $result;
     }
 
+    public function findFiltered(
+        array $columns,
+        ?int $id,
+        ?string $name,
+        ?string $initials,
+        int $pageSize = 100,
+        int $pageNumber = 1
+    ) {
+        $result = $this->regionEntity->findFiltered($columns, $id, $name, $initials, $pageSize, $pageNumber);
+
+        if (!$result) {
+            return [];
+        }
+        return $result;
+    }
     /**
      * Salva as regioes no banco de dados.
      *

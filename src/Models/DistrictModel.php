@@ -34,6 +34,23 @@ class DistrictModel
         return $result;
     }
 
+    public function findFiltered(
+        array $columns,
+        ?int $id,
+        ?string $name,
+        ?int $cityId,
+        int $pageSize = 100,
+        int $pageNumber = 1
+    ) {
+        $result = $this->districtEntity->findFiltered($columns, $id, $name, $cityId, $pageSize, $pageNumber);
+
+        if (!$result) {
+            return [];
+        }
+
+        return $result;
+    }
+
     /**
      * Salva os distritos no banco de dados.
      *
